@@ -29,18 +29,8 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(applicationContext, Notification::class.java)
         val title = binding.titleNt.text.toString()
         val message = binding.messageNt.text.toString()
-        intent.putExtra("title", title)
+        intent.putExtra("tittle", title)
         intent.putExtra("message", message)
-//        val bundle = Bundle()
-//        //Add your data from getFactualResults method to bundle
-//        //Add your data from getFactualResults method to bundle
-//        bundle.putString("title", title)
-//        bundle.putString("message", message)
-//        //Add the bundle to the intent
-//        //Add the bundle to the intent
-//        intent.putExtras(bundle)
-//        startActivity(intent)
-
         val pendingIntent = PendingIntent.getBroadcast(
             applicationContext,
             Notification.notificationId,

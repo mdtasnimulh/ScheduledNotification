@@ -6,18 +6,13 @@ import android.app.TaskStackBuilder
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
-import android.content.Intent.getIntent
-import android.os.Bundle
 import androidx.core.app.NotificationCompat
-
 
 class Notification: BroadcastReceiver() {
 
-    //val channelId = "mySchedule"
-  //  val notificationId = 1
-    val title = "Schedule Notification"
-    val message = "Message"
     override fun onReceive(context: Context, intent: Intent) {
+        val title = intent.getStringExtra("tittle")
+        val message = intent.getStringExtra("message")
         val intent = Intent(context, MainActivity::class.java)
         val pendingIntent = TaskStackBuilder.create(context).run {
             addNextIntentWithParentStack(intent)
@@ -27,8 +22,6 @@ class Notification: BroadcastReceiver() {
             .setContentTitle(title)
             .setContentText(message)
             .setSmallIcon(R.drawable.ic_launcher_foreground)
-            .setContentTitle(intent.getStringExtra(title))
-            .setContentText(intent.getStringExtra(message))
             .setContentIntent(pendingIntent)
             .build()
 
