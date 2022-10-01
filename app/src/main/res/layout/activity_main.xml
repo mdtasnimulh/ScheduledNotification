@@ -49,7 +49,9 @@
             android:calendarViewShown="false"
             android:layout_gravity="center"
             android:scaleY="0.7"
-            android:scaleX="0.7"/>
+            android:scaleX="0.7"
+            android:layout_marginLeft="-30dp"
+            android:layout_marginRight="-45dp"/>
 
         <TimePicker
             android:id="@+id/timePicker"
