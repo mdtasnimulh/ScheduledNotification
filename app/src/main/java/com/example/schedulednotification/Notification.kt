@@ -23,6 +23,7 @@ class Notification: BroadcastReceiver() {
             .setContentText(message)
             .setSmallIcon(R.drawable.ic_launcher_foreground)
             .setContentIntent(pendingIntent)
+            .setAutoCancel(true)
             .build()
 
         val manager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
