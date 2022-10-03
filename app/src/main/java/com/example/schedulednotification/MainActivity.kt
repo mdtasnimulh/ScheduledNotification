@@ -26,11 +26,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun scheduleNotification() {
-        val intent = Intent(applicationContext, Notification::class.java)
         val title = binding.titleNt.text.toString()
         val message = binding.messageNt.text.toString()
-        intent.putExtra("tittle", title)
-        intent.putExtra("message", message)
+        val intent = Intent(applicationContext, Notification::class.java).apply {
+            putExtra("tittle", title)
+            putExtra("message", message)
+        }
         val pendingIntent = PendingIntent.getBroadcast(
             applicationContext,
             Notification.notificationId,
